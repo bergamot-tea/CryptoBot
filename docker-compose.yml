@@ -1,0 +1,17 @@
+version: "3.9"
+   
+services:
+  bot:
+    build: .
+    command:
+      - /bin/bash
+      - -c
+      - |
+        
+        python crypto_bot.py &
+        python scheduler.py
+    volumes:
+      - .:/code
+    restart: on-failure
+    extra_hosts:
+      - "localhost:host-gateway"
