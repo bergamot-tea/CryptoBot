@@ -177,7 +177,7 @@ async def callback_inline(callback: types.CallbackQuery):
     if already_in_base != None:
         await callback.message.answer('рад что Вы одумались :)')
     else:
-        await callback.message.answer('А вы и не были подписаны')
+        await callback.message.answer('А вы и так не подписаны')
 #------------------------------------------------------------------------------    
 
 @dp.message_handler(commands=['help'])
@@ -195,7 +195,20 @@ async def help (message: types.Message):
         
           )
 
-
+@dp.message_handler(commands=['start'])
+async def help (message: types.Message):
+    await message.answer(
+        text = '''
+            Что может бот:
+        /course - узнать цены криптовалют в данный момент и изменения цен за час, день и неделю
+        /subscribe - включить уведомления о сильных изменениях цен криптовалют
+        /unsubscribe - выключить уведомления
+        В данный момент бот работает с криптовалютами: Bitcoin, Ethereum, Binancecoin, Ripple, Solana, Cardano, Dogecoin, Tron, Litecoin, Polkadot
+            
+        '''
+        
+        
+          )
 
 
 if __name__ == '__main__':

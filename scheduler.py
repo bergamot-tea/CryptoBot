@@ -45,7 +45,7 @@ def get_changes(market_list,tick_interval):
 schedule.every(5).minutes.do(get_changes, market_list = market_list, tick_interval='5m')
 schedule.every(15).minutes.do(get_changes, market_list = market_list, tick_interval='15m')
 schedule.every(30).minutes.do(get_changes, market_list = market_list, tick_interval='30m')
-schedule.every(1).hour.do(get_changes, market_list = market_list, tick_interval='1h')
+#schedule.every(1).hour.do(get_changes, market_list = market_list, tick_interval='1h')
 #schedule.every(4).hour.do(get_changes, market_list = market_list, tick_interval='4h')
 #schedule.every(15).seconds.do(get_changes, market_list = market_list, tick_interval='6h')
 #schedule.every(12).hour.do(get_changes, market_list = market_list, tick_interval='12h')
